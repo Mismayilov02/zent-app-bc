@@ -19,18 +19,18 @@ class MainActivity : AppCompatActivity() {
         btnLogin.setOnClickListener { _ ->
             if (txtEmail.text.isEmpty() ||
                 txtPassword.text.isEmpty()){
-                Toast.makeText(this, "Please, fill all the fields.", Toast.LENGTH_LONG).show()
-            }
-            else if (!txtEmail.text.contains("@")){
-                Toast.makeText(this, "Email is incorrect.", Toast.LENGTH_LONG).show()
-            }
-            else if (txtPassword.length()<8){
-                Toast.makeText(this, "Password must be 8 symbols or more.", Toast.LENGTH_LONG).show()
-            }
-            else{
-                Toast.makeText(this, "Success login", Toast.LENGTH_LONG).show()
+                showToast("Please fill in all fields.")
+            } else if (!txtEmail.text.contains("@")){
+                showToast("Invalid email.")
+            } else if (txtPassword.length()<8){
+                showToast("Password must be at least 8 characters.")
+            } else{
+                showToast("Login successful.")
             }
         }
 
+    }
+    fun showToast(message: String){
+        Toast.makeText(this, message, Toast.LENGTH_LONG).show()
     }
 }
