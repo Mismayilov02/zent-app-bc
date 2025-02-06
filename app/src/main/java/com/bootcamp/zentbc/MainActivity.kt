@@ -1,63 +1,36 @@
 package com.bootcamp.zentbc
 
 import android.os.Bundle
-import android.util.Log
 import android.widget.Button
 import android.widget.EditText
-import android.widget.TextView
-import androidx.activity.enableEdgeToEdge
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
+import androidx.collection.emptyLongSet
 
 class MainActivity : AppCompatActivity() {
-    var count = 0
-    lateinit var txtCount: TextView
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        Log.e("Bootcamp","run onCreate")
 
-        val btnIncrease = findViewById<Button>(R.id.btn_increase)
-        txtCount = findViewById<TextView>(R.id.txt_count)
+        val btnLogin = findViewById<Button>(R.id.btn_login)
+        val txtPassword = findViewById<EditText>(R.id.edit_txt_password)
+        val txtEmail = findViewById<EditText>(R.id.edit_txt_email)
 
-        btnIncrease.setOnClickListener { _ ->
-            count++
-            txtCount.text = count.toString()
+        btnLogin.setOnClickListener { _ ->
+            if (txtEmail.text.isEmpty() ||
+                txtPassword.text.isEmpty()){
+                Toast.makeText(this, "Please, fill all the fields.", Toast.LENGTH_LONG).show()
+            }
+            else if (!txtEmail.text.contains("@")){
+                Toast.makeText(this, "Email is incorrect.", Toast.LENGTH_LONG).show()
+            }
+            else if (txtPassword.length()<8){
+                Toast.makeText(this, "Password must be 8 symbols or more.", Toast.LENGTH_LONG).show()
+            }
+            else{
+                Toast.makeText(this, "Success login", Toast.LENGTH_LONG).show()
+            }
         }
 
     }
-
-    override fun onStart() {
-        count = 0
-        txtCount.text = count.toString()
-        Log.e("Bootcamp","run onStart")
-        super.onStart()
-    }
-
-    override fun onResume() {
-        Log.e("Bootcamp","run onResume")
-        super.onResume()
-    }
-
-    override fun onPause() {
-        Log.e("Bootcamp","run onPause")
-        super.onPause()
-    }
-
-    override fun onStop() {
-        Log.e("Bootcamp","run onStop")
-        super.onStop()
-    }
-
-    override fun onDestroy() {
-        Log.e("Bootcamp","run onDestroy")
-        super.onDestroy()
-    }
-
-    override fun onRestart() {
-        Log.e("Bootcamp","run onRestart")
-        super.onRestart()
-    }
-
 }
