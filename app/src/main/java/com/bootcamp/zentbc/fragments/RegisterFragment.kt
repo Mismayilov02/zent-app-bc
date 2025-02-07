@@ -25,7 +25,7 @@ class RegisterFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         binding.button.setOnClickListener { _ ->
-            findNavController().navigate(R.id.action_registerFragment_to_loginFragment)
+            findNavController().popBackStack()
         }
 
     }
