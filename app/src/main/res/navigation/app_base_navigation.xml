@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/app_base_navigation"
-    app:startDestination="@id/loginFragment">
+    app:startDestination="@id/splahScreenFragment">
 
     <fragment
         android:id="@+id/loginFragment"
@@ -13,6 +13,9 @@
         <action
             android:id="@+id/action_loginFragment_to_registerFragment"
             app:destination="@id/registerFragment" />
+        <action
+            android:id="@+id/action_loginFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
     </fragment>
     <fragment
         android:id="@+id/registerFragment"
@@ -38,4 +41,28 @@
         android:name="com.bootcamp.zentbc.fragments.SettingsFragment"
         android:label="fragment_settings"
         tools:layout="@layout/fragment_settings" />
+    <fragment
+        android:id="@+id/onboardingFragment"
+        android:name="com.bootcamp.zentbc.fragments.OnboardingFragment"
+        android:label="fragment_onboarding"
+        tools:layout="@layout/fragment_onboarding" >
+        <action
+            android:id="@+id/action_onboardingFragment_to_registerFragment"
+            app:destination="@id/registerFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/splahScreenFragment"
+        android:name="com.bootcamp.zentbc.fragments.SplashScreenFragment"
+        android:label="fragment_splah_screen"
+        tools:layout="@layout/fragment_splah_screen" >
+        <action
+            android:id="@+id/action_splahScreenFragment_to_onboardingFragment"
+            app:destination="@id/onboardingFragment" />
+        <action
+            android:id="@+id/action_splahScreenFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
+        <action
+            android:id="@+id/action_splahScreenFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+    </fragment>
 </navigation>

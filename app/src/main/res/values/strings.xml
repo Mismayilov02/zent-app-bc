@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Zent</string>
+    <string name="app_name">Huseyn </string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="let_s_start">Let’s Start</string>
     <string name="onboarding_title">Task Management &amp; To-Do List</string>
@@ -43,6 +43,10 @@
     <string name="select">Select</string>
     <string name="select_language">Select language</string>
     <string name="azerbaijan">Azerbaijan</string>
+    <string name="prefs_key">zent-app-prefs</string>
+    <string name="fullname2">fullName</string>
+    <string name="email2">email</string>
+    <string name="password2">password</string>
 
     <array name="languages">
         <item>English</item>
