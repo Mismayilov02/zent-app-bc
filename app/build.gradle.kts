@@ -1,7 +1,7 @@
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
-
+    id ("kotlin-kapt")
 }
 
 android {
@@ -54,4 +54,10 @@ dependencies {
 
     implementation("androidx.navigation:navigation-fragment:$nav_version")
     implementation("androidx.navigation:navigation-ui:$nav_version")
+
+    // Database
+    implementation(libs.androidx.room)
+    annotationProcessor(libs.androidx.roomCompiler)
+    implementation(libs.androidx.roomKtx)
+    kapt(libs.androidx.roomCompiler)
 }
