@@ -40,7 +40,11 @@
         android:id="@+id/settingsFragment"
         android:name="com.bootcamp.zentbc.fragments.SettingsFragment"
         android:label="fragment_settings"
-        tools:layout="@layout/fragment_settings" />
+        tools:layout="@layout/fragment_settings" >
+        <action
+            android:id="@+id/action_settingsFragment_to_splahScreenFragment"
+            app:destination="@id/splahScreenFragment" />
+    </fragment>
     <fragment
         android:id="@+id/onboardingFragment"
         android:name="com.bootcamp.zentbc.fragments.OnboardingFragment"

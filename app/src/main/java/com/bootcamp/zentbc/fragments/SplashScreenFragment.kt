@@ -8,6 +8,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
+import com.bootcamp.zentbc.MainActivity
 import com.bootcamp.zentbc.R
 
 class SplashScreenFragment : Fragment() {
@@ -24,6 +25,7 @@ class SplashScreenFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        (activity as MainActivity).bottomMenuVisibility(false)
         sharedPreferences = context?.getSharedPreferences(
             getString(R.string.prefs_key), MODE_PRIVATE
         )!!

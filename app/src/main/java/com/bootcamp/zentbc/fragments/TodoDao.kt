@@ -1,6 +1,7 @@
 package com.bootcamp.zentbc.fragments
 
 import androidx.room.Dao
+import androidx.room.Delete
 import androidx.room.Insert
 import androidx.room.Query
 import androidx.room.Update
@@ -18,4 +19,7 @@ interface TodoDao {
 
     @Query("UPDATE todo SET status = :status WHERE id=:id")
     suspend fun updateStatusById(id: Int,status: TodoStatus)
+
+    @Delete
+    suspend fun delete(todo: TodoModel)
 }
